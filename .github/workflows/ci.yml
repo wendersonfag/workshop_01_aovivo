@@ -6,11 +6,13 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: primeira CI nossa
-              run: echo "hello hello"
+              run: echo hello hello
+            
+            - name: primeira CI nossa
+              run: echo hello world!
 
             - name: o que tem aqui
               run: echo $(ls)
 
             - name: qual diretorio
               run: echo $(pwd)
-              
