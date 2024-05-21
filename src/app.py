@@ -1,5 +1,5 @@
 from frontend import ExcelValidorUI
-from backend import process_excel
+from backend import process_excel, excel_to_sql
 
 
 def main():
@@ -9,8 +9,14 @@ def main():
     upload_file = ui.upload_file()
 
     if upload_file:
-        result, errors = process_excel(upload_file)
-        ui.display_results(result,errors)
+        df, result, error = process_excel(upload_file)
+        ui.display_results(result,error)
+
+        if error:
+            ui.display_wrong_message
+        elif ui.display_save_button():
+            excel_to_sql(df)
+            ui.display_sucess_message()
 
 
 if __name__ == "__main__":
