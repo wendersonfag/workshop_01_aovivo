@@ -1,0 +1,4 @@
+[tool.taskipy.tasks]
+run = "streamlit run src/app.py"
+test = "pytest tests -v"
+#docs = "lsof -ti :8000 | xargs kill -9 | mkdocs serve"
