@@ -13,3 +13,4 @@ jobs:
 
             - name: qual diretorio
               run: echo $(pwd)
+              
