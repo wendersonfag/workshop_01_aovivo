@@ -20,7 +20,7 @@ jobs:
               run: pip install -r requirements.txt
 
             - name: Rodar os testes
-              run: pytest tests/test_unit.py
+              run: pytest tests/test_contrato.py
       
             - name: Rodar os testes
               run: echo hello world!        
