@@ -6,7 +6,7 @@ jobs:
         runs-on: ubuntu-latest
         strategy:
           matrix:
-            python-version: [3.9, 3.10, 3.11, 3.12]
+            python-version: ["3.9", "3.10", "3.11", "3.12"]
         steps:
             - name: Baixar o repositório
               uses: actions/checkout@v4
@@ -16,8 +16,17 @@ jobs:
               with:
                 python-version: ${{ matrix.python-version }}
 
-            - name: o que tem aqui
-              run: echo $(ls)
+            - name: Instalo as libs
+              run: pip install -r requirements.txt
 
-            - name: qual diretorio
+            - name: Rodar os testes
+              run: pytest tests/test_unit.py
+      
+            - name: Rodar os testes
+              run: echo hello world!        
+      
+            - name: Segundo Passo
+              run: echo $(ls)
+      
+            - name: Terceiro passo
               run: echo $(pwd)
